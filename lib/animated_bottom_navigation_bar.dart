@@ -170,6 +170,7 @@ class AnimatedBottomNavigationBar extends StatefulWidget {
           ((itemCount ?? icons!.length) >= 2) &&
               ((itemCount ?? icons!.length) <= 5),
         ),
+        assert(!showLoading || borderColor != null, 'Border color must be provided when showLoading is true');
         super(key: key) {
     if (gapLocation == GapLocation.end) {
       if (rightCornerRadius != 0)
@@ -183,11 +184,6 @@ class AnimatedBottomNavigationBar extends StatefulWidget {
         throw NonAppropriatePathException(
             'Odd count of icons along with $gapLocation causes render issue => '
             'consider set gapLocation to ${GapLocation.end}');
-    }
-    if (showLoading) {
-      if (borderColor == null) {
-        throw Exception('if showLoading is `true` set `borderColor`');
-      }
     }
   }
 
