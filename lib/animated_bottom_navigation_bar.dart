@@ -170,7 +170,8 @@ class AnimatedBottomNavigationBar extends StatefulWidget {
           ((itemCount ?? icons!.length) >= 2) &&
               ((itemCount ?? icons!.length) <= 5),
         ),
-        assert(!showLoading || borderColor != null, 'Border color must be provided when showLoading is true');
+        assert(!showLoading || borderColor != null,
+            '`borderColor` must be provided when `showLoading` is true'),
         super(key: key) {
     if (gapLocation == GapLocation.end) {
       if (rightCornerRadius != 0)
